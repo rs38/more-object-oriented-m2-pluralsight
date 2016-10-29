@@ -26,16 +26,24 @@ namespace BranchingDemoTests {
             Assert.AreEqual(0, a.Balance);
         }
         [TestMethod]
-        public void freezed() {
+        public void notVerified() {
 
             a.Deposit(10);
-            a.Freeze();
             a.Withdraw(1);    
             Assert.AreEqual(10, a.Balance);
         }
 
         [TestMethod]
-        public void freezed2() {
+        public void Verified() {
+            a.HolderVerified();
+            a.Deposit(10);
+            a.Withdraw(1);
+            Assert.AreEqual(9, a.Balance);
+        }
+
+
+        [TestMethod]
+        public void freezed_moreTests() {
 
             a.Deposit(10);
            

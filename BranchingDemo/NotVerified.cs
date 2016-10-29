@@ -19,7 +19,7 @@ namespace BranchingDemo
         public IAccountState Freeze() => this;
 
         public IAccountState HolderVerified() {
-            this.OnUnfreeze();
+            this.OnUnfreeze();  //<- added notification for verification
             return new Active(this.OnUnfreeze); 
         }
         public IAccountState Withdraw(Action subtractFromBalance) => this;
